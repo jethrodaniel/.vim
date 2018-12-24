@@ -2,12 +2,22 @@
 
 Vim settings and plugins
 
-```
-# Back up existing vim configurations
-mkdir ~/vim.bk && mv ~/.viminfo ~/.vim ~/.vimrc ~/.vim.bkup
+### Installation
 
-# Install with git
-git clone https://github.com/jethrodaniel/.vim $HOME/.vim
+Copy pasta the following into your terminal, then press <kbd>Enter</kbd>.
+```
+function install_vim_settings {
+  mkdir ~/.vim.bkup && mv ~/.vim ~/.vim{rc,info} ~/.vim.bkup
+  git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
+}
+
+function restore_old_vim_settings {
+  rm -rf ~/.vim
+  find ~ -mindepth 1 -maxdepth 1 -name ".vim*" -exec mv {} ~/.vim.bkup/ \;
+  rm -rf ~/.vim.bkup
+}
+
+install_vim_settings
 ```
 
 ### What it do
