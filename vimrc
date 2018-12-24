@@ -58,12 +58,6 @@ else
 endif " has("autocmd")
 
 "------------------------------------------------------------
-" Use Pathogen to manage plugins
-"------------------------------------------------------------
-" All plugin related configuration must follow this line
-execute pathogen#infect()
-
-"------------------------------------------------------------
 " Backup/swap/temp files
 "------------------------------------------------------------
 if has("vms")
