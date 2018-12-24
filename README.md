@@ -9,6 +9,12 @@ rm -rf ~/.vim ~/.vim{rc,info}
 git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
 ```
 
+You should also set your system editor to vim like so:
+
+```
+sudo update-alternatives --config editor
+```
+
 ### Updating
 
 ```
