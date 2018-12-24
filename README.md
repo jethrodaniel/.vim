@@ -4,20 +4,9 @@ Vim settings and plugins
 
 ### Installation
 
-Copy pasta the following into your terminal, then press <kbd>Enter</kbd>.
 ```
-function install_vim_settings {
-  mkdir ~/.vim.bkup && mv ~/.vim ~/.vim{rc,info} ~/.vim.bkup
-  git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
-}
-
-function restore_old_vim_settings {
-  rm -rf ~/.vim
-  find ~ -mindepth 1 -maxdepth 1 -name ".vim*" -exec mv {} ~/.vim.bkup/ \;
-  rm -rf ~/.vim.bkup
-}
-
-install_vim_settings
+rm -rf ~/.vim ~/.vim{rc,info}
+git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
 ```
 
 ### What it do
