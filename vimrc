@@ -100,11 +100,15 @@ if &t_Co > 2 || has('gui_running')
 
   colorscheme sublimemonokai " Sublime's monokai theme
 
-  highlight LineNr       ctermbg=234
-  highlight TabLineSel   ctermbg=235
-  highlight StatusLine   ctermbg=248 ctermfg=238
-  highlight StatusLineNC ctermbg=232
-  highlight SpellBad                 ctermfg=16
+  highlight LineNr           ctermbg=234
+  highlight TabLineSel       ctermbg=235
+
+  highlight StatusLine       ctermbg=248 ctermfg=238
+  highlight StatusLineNC     ctermbg=232
+  highlight StatusLineTerm   ctermbg=248 ctermfg=238
+  highlight StatusLineTermNC ctermbg=232
+
+  highlight SpellBad                     ctermfg=16
 endif
 
 " Use tree style listing for netrw
