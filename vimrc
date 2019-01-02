@@ -119,3 +119,5 @@ function! SynGroup()
   let l:s = synID(line('.'), col('.'), 1)
   echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
+
+iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
