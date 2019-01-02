@@ -64,6 +64,7 @@ set splitright
 
 " Put esc in a better place(s)
 inoremap jj <Esc>
+inoremap ff <Esc>
 
 " space-p to toggle paste
 nnoremap <Space>p :set paste!<CR>
