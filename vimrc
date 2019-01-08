@@ -11,10 +11,11 @@ set nocompatible
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set ruler	    " Show the cursor position all the time
-set number    " Show line numbers
-set showcmd	  " Display incomplete commands
-set incsearch " Use incremental searching
+set ruler       " Show the cursor position all the time
+set number      " Show line numbers
+set showcmd     " Display incomplete commands
+set incsearch   " Use incremental searching
+set autoindent  " Always set autoindenting on
 
 " Only highlight while searching
 augroup vimrc-incsearch-highlight
@@ -38,14 +39,12 @@ if has('autocmd')
     \   exe "normal! g`\"" |
     \ endif
   augroup END
-else
-  set autoindent  " Always set autoindenting on
 endif
 
 setlocal spelllang=en_us " Use US English
 
-set backup		  " Keep a backup file (restore to previous version)
-set undofile		" Keep an undo file (undo changes after closing)
+set backup      " Keep a backup file (restore to previous version)
+set undofile    " Keep an undo file (undo changes after closing)
 
 " Put backups in a single place, also enables persistent undo
 set undodir=~/.vim/undo//
@@ -82,8 +81,8 @@ nnoremap <C-c><C-c> :q!<CR>
 
 " If we have terminal support
 if has('terminal')
-  " space-q to toggle term normal mode when in `:terminal`
-  tnoremap <Space>q <C-W>N
+  "<Esc> to toggle term normal mode when in `:terminal`
+  tnoremap <Esc> <C-\><C-n>
 
   " space-t for a terminal in a new tab
   nnoremap <Space>t :tab term<CR>
