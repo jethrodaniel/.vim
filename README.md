@@ -48,3 +48,4 @@ Vim plugins used:
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-rails](https://github.com/tpope/vim-rails)

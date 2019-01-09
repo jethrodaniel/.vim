@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/xterm-color-table"]
 	path = pack/plugins/start/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim.git
+[submodule "pack/plugins/start/vim-rails"]
+	path = pack/plugins/start/vim-rails
+	url = https://github.com/tpope/vim-rails.git
