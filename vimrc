@@ -61,11 +61,14 @@ set formatoptions-=t " Do not automatically wrap text when typing
 set splitbelow " Open new panes below and to the right
 set splitright
 
+" Set the leader key
+let mapleader = "\<Space>"
+
 " Put esc in a better place(s)
 inoremap jj <Esc>
 
-" space-p to toggle paste
-nnoremap <Space>p :set paste!<CR>
+" Toggle paste
+nnoremap <Leader>p :set paste!<CR>
 
 " Move between panes without the ^W prefix
 nnoremap <C-j> <C-w><C-j>
@@ -73,23 +76,32 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
-" ^c to close the current window or pane
+" Close the current window or pane
 nnoremap <C-c> <C-w><C-c>
 
-" ^c^c to close the current window or pane by force
-nnoremap <C-c><C-c> :q!<CR>
+" Exit without saving changes
+nnoremap X :q!<CR>
+
+" Save and exit
+nnoremap Z :wq<CR>
 
 " If we have terminal support
 if has('terminal')
-  "<Esc> to toggle term normal mode when in `:terminal`
+  " Toggle term normal mode when in `:terminal`
   tnoremap <Esc> <C-\><C-n>
 
-  " space-t for a terminal in a new tab
-  nnoremap <Space>t :tab term<CR>
+  " Terminal in a new tab
+  nnoremap <Leader>t :tab term<CR>
 endif
 
-" space-space to toggle spell checking
-nnoremap <Space><Space> :set spell!<CR> :set list!<CR>
+" Toggle spell checking
+nnoremap <Leader><Leader> :set spell!<CR> :set list!<CR>
+
+" Switch horizontal panes to vertical
+nnoremap <Leader>v <C-w>t<C-w>H
+
+" Switch vertical panes to horizontal
+nnoremap <Leader>h <C-w>t<C-w>K
 
 " If we have color support
 if &t_Co > 2 || has('gui_running')
@@ -119,4 +131,5 @@ function! SynGroup()
   echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
 
+" Easily add a ruby debugger
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
