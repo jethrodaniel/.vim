@@ -71,10 +71,10 @@ inoremap jj <Esc>
 nnoremap <Leader>p :set paste!<CR>
 
 " Move between panes without the ^W prefix
+nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
 
 " Close the current window or pane
 nnoremap <C-c> <C-w><C-c>
@@ -89,9 +89,6 @@ nnoremap Z :wq<CR>
 if has('terminal')
   " Toggle term normal mode when in `:terminal`
   tnoremap <Esc> <C-\><C-n>
-
-  " Terminal in a new tab
-  nnoremap <Leader>t :tab term<CR>
 endif
 
 " Toggle spell checking
@@ -102,6 +99,9 @@ nnoremap <Leader>v <C-w>t<C-w>H
 
 " Switch vertical panes to horizontal
 nnoremap <Leader>h <C-w>t<C-w>K
+
+" Open a new tab page
+nnoremap <Leader>t :tabnew<CR>
 
 " If we have color support
 if &t_Co > 2 || has('gui_running')
