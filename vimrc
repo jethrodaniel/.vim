@@ -14,8 +14,12 @@ set backspace=indent,eol,start
 set ruler       " Show the cursor position all the time
 set number      " Show line numbers
 set showcmd     " Display incomplete commands
-set incsearch   " Use incremental searching
 set autoindent  " Always set autoindenting on
+
+set incsearch   " Use incremental searching
+set ignorecase  " Case insensitive search for small caps
+set smartcase   " ... unless search contains at least one capital
+set wrapscan    " Enable search around end of file
 
 " Only highlight while searching
 augroup vimrc-incsearch-highlight
@@ -31,17 +35,25 @@ endif
 
 " If compiled with support for autocommands
 if has('autocmd')
-    augroup vimrcEx
-  au!
-  " When editing a file, always jump to the last known cursor position
-  autocmd BufReadPost *
-    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-  augroup END
+  augroup vimrcEx
+    au!
+    " When editing a file, always jump to the last known cursor position
+    autocmd BufReadPost *
+      \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
+    augroup END
+
+  augroup indentation_and_options
+    au!
+    au! FileType make      setlocal noexpandtab
+    " Dash is part of a 'word' in files that use css classes
+    au! FileType html,haml,eruby,css,scss setlocal iskeyword+=-
+au! FileType mail setlocal commentstring=>\ %s
 endif
 
-setlocal spelllang=en_us " Use US English
+setlocal spelllang=en_us                 " Spelling options
+set spellfile=~/.vim/spell/en.utf-8.add  " Words added with `zg`
 
 set backup      " Keep a backup file (restore to previous version)
 set undofile    " Keep an undo file (undo changes after closing)
@@ -58,13 +70,13 @@ set expandtab     " Use spaces instead of tabs
 set nowrap           " Do not automatically wrap on load
 set formatoptions-=t " Do not automatically wrap text when typing
 
-set splitbelow " Open new panes below and to the right
-set splitright
+set splitbelow " Open new panes below
+set splitright " .. and to the right
 
 " Set the leader key
 let mapleader = "\<Space>"
 
-" Put esc in a better place(s)
+" An additional, often used, esc
 inoremap jj <Esc>
 
 " Toggle paste
@@ -136,3 +148,5 @@ endfun
 
 " Easily add a ruby debugger
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
+
+set shortmess+=I  " Don't show vim intro screen
