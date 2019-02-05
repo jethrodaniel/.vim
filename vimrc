@@ -49,7 +49,10 @@ if has('autocmd')
     au! FileType make      setlocal noexpandtab
     " Dash is part of a 'word' in files that use css classes
     au! FileType html,haml,eruby,css,scss setlocal iskeyword+=-
-au! FileType mail setlocal commentstring=>\ %s
+    au! FileType mail setlocal commentstring=>\ %s
+
+  " Always spell-check commits
+  autocmd Filetype gitcommit setlocal spell textwidth=72
 endif
 
 setlocal spelllang=en_us                 " Spelling options
@@ -150,3 +153,4 @@ endfun
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
 
 set shortmess+=I  " Don't show vim intro screen
+
