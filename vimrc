@@ -51,8 +51,8 @@ if has('autocmd')
     au! FileType html,haml,eruby,css,scss setlocal iskeyword+=-
     au! FileType mail setlocal commentstring=>\ %s
 
-  " Always spell-check commits
-  autocmd Filetype gitcommit setlocal spell textwidth=72
+  " Always spell-check commits and add rulers for correct length
+  autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73 colorcolumn+=51
 endif
 
 setlocal spelllang=en_us                 " Spelling options
