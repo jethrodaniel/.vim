@@ -22,3 +22,6 @@
 [submodule "pack/plugins/start/vim-rails"]
 	path = pack/plugins/start/vim-rails
 	url = https://github.com/tpope/vim-rails.git
+[submodule "pack/plugins/start/open-pdf.vim"]
+	path = pack/plugins/start/open-pdf.vim
+	url = https://github.com/rhysd/open-pdf.vim.git
