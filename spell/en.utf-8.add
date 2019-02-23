@@ -5,3 +5,5 @@ repos
 linter
 rubocop
 prepend
+subdirectories
+hyperstack
