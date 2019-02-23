@@ -28,3 +28,6 @@
 [submodule "pack/plugins/start/diffchar.vim"]
 	path = pack/plugins/start/diffchar.vim
 	url = https://github.com/rickhowe/diffchar.vim.git
+[submodule "pack/plugins/start/csv"]
+	path = pack/dist/start/csv
+	url = https://github.com/chrisbra/csv.vim
