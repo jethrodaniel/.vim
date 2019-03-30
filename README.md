@@ -61,4 +61,5 @@ https://github.com/rhysd/open-pdf.vim.git
 https://github.com/tpope/vim-fugitive.git
 https://github.com/tpope/vim-rails.git
 https://github.com/tpope/vim-rhubarb.git
+https://github.com/tpope/vim-obsession
 ```
