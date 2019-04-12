@@ -25,9 +25,6 @@
 [submodule "pack/plugins/start/open-pdf.vim"]
 	path = pack/plugins/start/open-pdf.vim
 	url = https://github.com/rhysd/open-pdf.vim.git
-[submodule "pack/plugins/start/diffchar.vim"]
-	path = pack/plugins/start/diffchar.vim
-	url = https://github.com/rickhowe/diffchar.vim.git
 [submodule "pack/plugins/start/csv.vim"]
 	path = pack/plugins/start/csv.vim
 	url = https://github.com/chrisbra/csv.vim
