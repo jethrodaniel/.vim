@@ -154,3 +154,4 @@ iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
 
 set shortmess+=I  " Don't show vim intro screen
 
+set diffopt+=vertical " Make `diffthis` use vertical windows
