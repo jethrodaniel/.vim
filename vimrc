@@ -109,8 +109,12 @@ if has('terminal')
   tnoremap <Esc> <C-\><C-n>
 endif
 
-" Toggle spell checking
+" Toggle spell checking, and also show list characters like blanks at line
+" ends or non-unix eols
 nnoremap <Leader><Leader> :set spell!<CR> :set list!<CR>
+
+" Toggle line numbers
+nnoremap <Leader>n :set number!<CR>
 
 " Switch horizontal panes to vertical
 nnoremap <Leader>v <C-w>t<C-w>H
@@ -120,6 +124,13 @@ nnoremap <Leader>h <C-w>t<C-w>K
 
 " Open a new tab page
 nnoremap <Leader>t :tabnew<CR>
+
+" When using git's `mergetool` with vimdiff
+if &diff
+  map <leader>l :diffget LOCAL<CR>
+  map <leader>b :diffget BASE<CR>
+  map <leader>r :diffget REMOTE<CR>
+endif
 
 " If we have color support
 if &t_Co > 2 || has('gui_running')
