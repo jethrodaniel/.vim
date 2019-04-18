@@ -16,6 +16,12 @@ set number      " Show line numbers
 set showcmd     " Display incomplete commands
 set autoindent  " Always set autoindenting on
 
+" Add vim-fugitive status line:
+"
+" From `:help :Gbrowse`:
+" If you don't have a statusline, this one matches the default when 'ruler' is set:
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+
 set incsearch   " Use incremental searching
 set ignorecase  " Case insensitive search for small caps
 set smartcase   " ... unless search contains at least one capital
