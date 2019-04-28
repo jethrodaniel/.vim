@@ -132,11 +132,18 @@ nnoremap <Leader>h <C-w>t<C-w>K
 nnoremap <Leader>t :tabnew<CR>
 
 " When using git's `mergetool` with vimdiff
-if &diff
-  map <leader>l :diffget LOCAL<CR>
-  map <leader>b :diffget BASE<CR>
-  map <leader>r :diffget REMOTE<CR>
-endif
+" if &diff
+"   map <leader>l :diffget LOCAL<CR>
+"   map <leader>b :diffget BASE<CR>
+"   map <leader>r :diffget REMOTE<CR>
+" endif
+
+" Tab for completion
+imap <Tab> <C-P>
+
+set complete=.,b,u,]
+set wildmode=longest,list:longest
+set completeopt=menu,preview
 
 " If we have color support
 if &t_Co > 2 || has('gui_running')
