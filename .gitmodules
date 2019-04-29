@@ -40,3 +40,6 @@
 [submodule "pack/plugins/start/vim-ruby"]
 	path = pack/plugins/start/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "pack/plugins/start/gruvbox"]
+	path = pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

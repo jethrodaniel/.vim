@@ -4,15 +4,56 @@
 "  \ V /| | | | | | | | | (__
 " (_)_/ |_|_| |_| |_|_|  \___|
 "
+
+"------------------------------------------
+" General settings
 "------------------------------------------
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set ruler       " Show the cursor position all the time
-set number      " Show line numbers
-set showcmd     " Display incomplete commands
-set autoindent  " Always set autoindenting on
+" Show the cursor position in the bottom right-corner as >
+"   row,column
+" <
+set ruler
+
+" Show line numbers, relative to the source file
+set number
+
+" Add spaces when indenting
+set autoindent
+
+" Don't show vim intro screen
+set shortmess+=I
+
+" Make `diffthis` use vertical windows by default
+set diffopt+=vertical
+
+" American English
+setlocal spelllang=en_us
+
+" Words added with `zg`
+set spellfile=~/.vim/spell/en.utf-8.add
+
+set backup    " Keep a backup file (restore to previous version)
+set undofile  " Keep an undo file (undo changes after closing)
+
+" Put backups in a single place, also enables persistent undo
+set undodir=~/.vim/undo//
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swp//
+
+set tabstop=2     " Tabs are length 2, globally
+set shiftwidth=2  " Insert 2 spaces for indentation
+set expandtab     " Use spaces instead of tabs
+
+set nowrap " Do not automatically wrap on load
+
+" Open new horizontal splits at the bottom of the current window
+set splitbelow
+
+" Open new vertical splits to the right of the current window
+set splitright
 
 " Show a minimum number of lines below and above the current line
 set scrolloff=3
@@ -29,8 +70,8 @@ set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 set incsearch
 
 set ignorecase  " Case insensitive search for small caps
-set smartcase   " ... unless search contains at least one capital
-set wrapscan    " Enable search around end of file
+set smartcase   " ... unless the search contains at least one capital
+set wrapscan    " Enable searching around the end of a file
 
 " Enchances % with keyword pairs
 " For example, ruby's do..end pairs
@@ -76,28 +117,9 @@ if has('autocmd')
   augroup END
 endif
 
-setlocal spelllang=en_us                 " Spelling options
-set spellfile=~/.vim/spell/en.utf-8.add  " Words added with `zg`
-
-set backup      " Keep a backup file (restore to previous version)
-set undofile    " Keep an undo file (undo changes after closing)
-
-" Put backups in a single place, also enables persistent undo
-set undodir=~/.vim/undo//
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swp//
-
-set tabstop=2     " Tabs are length 2, globally
-set shiftwidth=2  " Insert 2 spaces for indentation
-set expandtab     " Use spaces instead of tabs
-
-set nowrap           " Do not automatically wrap on load
-
-" Open new horizontal splits at the bottom of the current window
-set splitbelow
-
-" Open new vertical splits to the right of the current window
-set splitright
+"------------------------------------------
+" Keymaps
+"------------------------------------------
 
 " Set the leader key
 let mapleader = "\<Space>"
@@ -125,12 +147,6 @@ nnoremap X :q!<CR>
 
 " Save and exit
 nnoremap Z :wq<CR>
-
-" If we have terminal support
-if has('terminal')
-  " Toggle term normal mode when in `:terminal`
-  tnoremap <Esc> <C-\><C-n>
-endif
 
 " Toggle spell checking, and also show list characters like blanks at line
 " ends or non-unix eols
@@ -162,27 +178,43 @@ set complete=.,b,u,]
 set wildmode=longest,list:longest
 set completeopt=menu,preview
 
+"------------------------------------------
+" Theme
+"------------------------------------------
+
 " If we have color support
 if &t_Co > 2 || has('gui_running')
   filetype on        " Use file type to set indent, syntax, etc
   syntax enable      " Use syntax highlighting
   set colorcolumn=80 " 80 character ruler
 
-  colorscheme sublimemonokai " Sublime's monokai theme
+  set background=dark " Use dark themes, if light/dark choice is available
 
-  highlight LineNr           ctermbg=234
-  highlight TabLineSel       ctermbg=235
+  " Needed to enable truecolor support
+  " See `:h xterm-true-color`
+  " https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/
+  if &term =~# '^screen'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  endif
 
-  highlight StatusLine       ctermbg=248 ctermfg=238
-  highlight StatusLineNC     ctermbg=232
-  highlight StatusLineTerm   ctermbg=248 ctermfg=238
-  highlight StatusLineTermNC ctermbg=232
+  " Needed to prevent terminal from misinterpreting italics
+  " See https://github.com/morhetz/gruvbox/issues/119
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
 
-  highlight SpellBad                     ctermfg=16
+  " Use gruvbox, a 'retro', pastel-filled theme
+  let g:gruvbox_italic = 1
+  let g:gruvbox_contrast_dark='hard'
+  colorscheme gruvbox
 endif
 
 " Use tree style listing for netrw
 let g:netrw_liststyle = 1
+
+"------------------------------------------
+" Functions
+"------------------------------------------
 
 " call `:exec SynGroup()` to show the highlight group under the cursor
 function! SynGroup()
@@ -190,9 +222,9 @@ function! SynGroup()
   echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
 
+"------------------------------------------
+" Abbreviations
+"------------------------------------------
+
 " Easily add a ruby debugger
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
-
-set shortmess+=I  " Don't show vim intro screen
-
-set diffopt+=vertical " Make `diffthis` use vertical windows
