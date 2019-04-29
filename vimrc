@@ -4,9 +4,7 @@
 "  \ V /| | | | | | | | | (__
 " (_)_/ |_|_| |_| |_|_|  \___|
 "
-
-" Use Vim settings, rather than Vi settings
-set nocompatible
+"------------------------------------------
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -16,53 +14,66 @@ set number      " Show line numbers
 set showcmd     " Display incomplete commands
 set autoindent  " Always set autoindenting on
 
+" Show a minimum number of lines below and above the current line
+set scrolloff=3
+
 " Add vim-fugitive status line:
 "
-" From `:help :Gbrowse`:
-" If you don't have a statusline, this one matches the default when 'ruler' is set:
+" From `:help :Gbrowse`: >
+"   If you don't have a statusline, this one matches the default when 'ruler'
+"   is set:
+" <
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
-set incsearch   " Use incremental searching
+" Use incremental searching, i.e, highlight searching while typing
+set incsearch
+
 set ignorecase  " Case insensitive search for small caps
 set smartcase   " ... unless search contains at least one capital
 set wrapscan    " Enable search around end of file
 
-
 " Enchances % with keyword pairs
-runtime macros/matchit.vim
+" For example, ruby's do..end pairs
+runtime! macros/matchit.vim
 
-" Only highlight while searching
-augroup vimrc-incsearch-highlight
-  autocmd!
-  autocmd CmdlineEnter /,\? :set hlsearch
-  autocmd CmdlineLeave /,\? :set nohlsearch
-augroup END
-
-" Enable mouse support if possible
-if has('mouse')
-  set mouse=a
-endif
+" Disable the mouse.
+"
+" This is useful for laptops, where the trackpad gets brushed occasionally.
+"
+" If you *wanted* mouse support, use this >
+"   if has('mouse')
+"     set mouse=a
+"   endif
+" <
+set mouse=
 
 " If compiled with support for autocommands
 if has('autocmd')
+
+  " Only highlight while searching
+  augroup vimrc-incsearch-highlight
+    autocmd!
+    autocmd CmdlineEnter /,\? :set hlsearch
+    autocmd CmdlineLeave /,\? :set nohlsearch
+  augroup END
+
+  " When editing a file, always jump to the last known cursor position
   augroup vimrcEx
-    au!
-    " When editing a file, always jump to the last known cursor position
+    autocmd!
     autocmd BufReadPost *
       \ if line("'\"") >= 1 && line("'\"") <= line("$") |
       \   exe "normal! g`\"" |
       \ endif
-    augroup END
+  augroup END
 
+  " Set filetype specific options
   augroup indentation_and_options
-    au!
-    au! FileType make      setlocal noexpandtab
-    " Dash is part of a 'word' in files that use css classes
-    au! FileType html,haml,eruby,css,scss setlocal iskeyword+=-
-    au! FileType mail setlocal commentstring=>\ %s
+    autocmd!
+    autocmd! FileType make      setlocal noexpandtab
 
-  " Always spell-check commits and add rulers for correct length
-  autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73 colorcolumn+=51
+    " Always spell-check commits and add rulers for correct length
+    autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73 colorcolumn+=51
+  augroup END
 endif
 
 setlocal spelllang=en_us                 " Spelling options
@@ -81,10 +92,12 @@ set shiftwidth=2  " Insert 2 spaces for indentation
 set expandtab     " Use spaces instead of tabs
 
 set nowrap           " Do not automatically wrap on load
-set formatoptions-=t " Do not automatically wrap text when typing
 
-set splitbelow " Open new panes below
-set splitright " .. and to the right
+" Open new horizontal splits at the bottom of the current window
+set splitbelow
+
+" Open new vertical splits to the right of the current window
+set splitright
 
 " Set the leader key
 let mapleader = "\<Space>"
