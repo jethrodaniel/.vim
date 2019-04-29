@@ -27,6 +27,10 @@ set ignorecase  " Case insensitive search for small caps
 set smartcase   " ... unless search contains at least one capital
 set wrapscan    " Enable search around end of file
 
+
+" Enchances % with keyword pairs
+runtime macros/matchit.vim
+
 " Only highlight while searching
 augroup vimrc-incsearch-highlight
   autocmd!

@@ -37,3 +37,6 @@
 [submodule "pack/plugins/start/vim-obsession.git"]
 	path = pack/plugins/start/vim-obsession.git
 	url = git://github.com/tpope/vim-obsession.git
+[submodule "pack/plugins/start/vim-ruby"]
+	path = pack/plugins/start/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
