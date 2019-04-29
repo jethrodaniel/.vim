@@ -29,6 +29,9 @@ set signcolumn=yes
 " Limit number of diffs to search for when displaying the gutter
 let g:signify_vcs_list=['git']
 
+" Show more of the file path in the status line
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 " Add spaces when indenting
 set autoindent
 
