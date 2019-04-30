@@ -149,13 +149,10 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 
 " Close the current window or pane
-nnoremap <C-c> <C-w><C-c>
+nnoremap <C-c> :q!<CR>
 
 " Save changes
 nnoremap W :w<CR>
-
-" Exit without saving changes
-nnoremap X :q!<CR>
 
 " Save and exit
 nnoremap Z :wq<CR>
