@@ -142,6 +142,9 @@ inoremap jj <Esc>
 " Toggle paste
 nnoremap <Leader>p :set paste!<CR>
 
+" Toggle wrap
+nnoremap <Leader>w :set wrap!<CR>
+
 " Move between panes without the ^W prefix
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
@@ -164,6 +167,9 @@ nnoremap <Leader><Leader> :set spell!<CR> :set list!<CR>
 " Toggle line numbers
 nnoremap <Leader>n :set number!<CR>
 
+" Replace " with '
+nnoremap <Leader>' :s/"/'/g<CR>
+
 " Switch horizontal panes to vertical
 nnoremap <Leader>v <C-w>t<C-w>H
 
@@ -172,13 +178,6 @@ nnoremap <Leader>h <C-w>t<C-w>K
 
 " Open a new tab page
 nnoremap <Leader>t :tabnew<CR>
-
-" When using git's `mergetool` with vimdiff
-" if &diff
-"   map <leader>l :diffget LOCAL<CR>
-"   map <leader>b :diffget BASE<CR>
-"   map <leader>r :diffget REMOTE<CR>
-" endif
 
 " Tab for completion
 imap <Tab> <C-P>
