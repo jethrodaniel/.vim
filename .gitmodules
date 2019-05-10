@@ -1,6 +1,3 @@
-[submodule "pack/plugins/start/vim-sublime-monokai"]
-	path = pack/plugins/start/vim-sublime-monokai
-	url = https://github.com/ErichDonGubler/vim-sublime-monokai.git
 [submodule "pack/plugins/start/editorconfig-vim"]
 	path = pack/plugins/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
