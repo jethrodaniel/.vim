@@ -167,8 +167,10 @@ nnoremap W :w<CR>
 nnoremap Z :wq<CR>
 
 " Toggle spell checking, and also show list characters like blanks at line
-" ends or non-unix eols
-nnoremap <Leader><Leader> :set spell!<CR> :set list!<CR>
+" ends or non-unix eols.
+" The `set spellcapcheck=` prevents lowercase words starting a sentence being
+" counted as spelling errors.
+nnoremap <Leader><Leader> :set spell!<CR> :set list!<CR> :set spellcapcheck= <CR>
 
 " Toggle line numbers
 nnoremap <Leader>n :set number!<CR>
