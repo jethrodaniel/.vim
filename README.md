@@ -5,7 +5,7 @@ Vim settings and plugins
 ### Installation
 
 ```
-rm -rf ~/.vim ~/.vim{rc,info}
+rm -rf ~/.vim ~/.vim{rc,info} # Or back yours up, if you'd like
 git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
 ```
 
@@ -48,18 +48,5 @@ VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Apr 10 2018 21:31:58)
 
 See vim's `:help packages` for more information.
 
-Vim plugins used:
+To see which plugins are used, check out the [.gitmodules](.gitmodules).
 
-```
-$ cat .gitmodules | grep '.git$' | ruby -npe '$_ = $_.match(/= ([^\s]*\n)/)[1]' | sort
-
-https://github.com/editorconfig/editorconfig-vim.git
-https://github.com/ErichDonGubler/vim-sublime-monokai.git
-https://github.com/guns/xterm-color-table.vim.git
-https://github.com/pangloss/vim-javascript.git
-https://github.com/rhysd/open-pdf.vim.git
-https://github.com/tpope/vim-fugitive.git
-https://github.com/tpope/vim-rails.git
-https://github.com/tpope/vim-rhubarb.git
-https://github.com/tpope/vim-obsession
-```

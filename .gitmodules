@@ -46,3 +46,6 @@
 [submodule "pack/plugins/start/vim-fish"]
 	path = pack/plugins/start/vim-fish
 	url = https://github.com/dag/vim-fish.git
+[submodule "pack/plugins/start/vim-haml"]
+	path = pack/plugins/start/vim-haml
+	url = https://github.com/tpope/vim-haml.git
