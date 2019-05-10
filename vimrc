@@ -23,6 +23,9 @@ set backspace=indent,eol,start
 " <
 set ruler
 
+" Show the current command being typed
+set showcmd
+
 " Show line numbers, relative to the source file
 set number
 
@@ -193,6 +196,15 @@ imap <Tab> <C-P>
 set complete=.,b,u,]
 set wildmode=longest,list:longest
 set completeopt=menu,preview
+
+" Format instead of `ex-mode`. Even Bram Moolenaar recommends this.
+" See `help usr_05`
+map Q gq
+
+" vim-fugitive extensions
+" command Tseeds Tmigration 0
+" command Vseeds Vmigration 0
+" command Eseeds Emigration 0
 
 "------------------------------------------
 " Theme
