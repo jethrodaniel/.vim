@@ -9,6 +9,12 @@
 " General settings
 "------------------------------------------
 
+" Vim needs a more POSIX-compliant shell than fish
+" See <https://github.com/dag/vim-fish>
+if &shell =~# 'fish$'
+  set shell=/usr/bin/env bash
+endif
+
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
