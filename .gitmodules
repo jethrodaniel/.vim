@@ -34,6 +34,18 @@
 	path = pack/plugins/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 
+[submodule "pack/plugins/start/vim-obsession"]
+	path = pack/plugins/start/vim-obsession
+	url = git://github.com/tpope/vim-obsession.git
+
+[submodule "pack/plugins/start/vim-pandoc"]
+	path = pack/plugins/start/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
+
+[submodule "pack/plugins/start/vim-pandoc-syntax"]
+	path = pack/plugins/start/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
+
 [submodule "pack/plugins/start/vim-rails"]
 	path = pack/plugins/start/vim-rails
 	url = https://github.com/tpope/vim-rails.git
@@ -53,13 +65,3 @@
 [submodule "pack/plugins/start/xterm-color-table"]
 	path = pack/plugins/start/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim.git
-
-[submodule "pack/plugins/start/vim-pandoc"]
-	path = pack/plugins/start/vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc.git
-[submodule "pack/plugins/start/vim-pandoc-syntax"]
-	path = pack/plugins/start/vim-pandoc-syntax
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
-[submodule "pack/plugins/start/vim-obsession"]
-	path = pack/plugins/start/vim-obsession
-	url = git://github.com/tpope/vim-obsession.git
