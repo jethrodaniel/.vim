@@ -1,27 +1,59 @@
-[submodule "pack/plugins/start/editorconfig-vim"]
-	path = pack/plugins/start/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "pack/plugins/start/vim-javascript"]
-	path = pack/plugins/start/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule "pack/plugins/start/vim-fugitive"]
-	path = pack/plugins/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "pack/plugins/start/vim-rhubarb"]
-	path = pack/plugins/start/vim-rhubarb
-	url = https://github.com/tpope/vim-rhubarb.git
-[submodule "pack/plugins/start/xterm-color-table"]
-	path = pack/plugins/start/xterm-color-table
-	url = https://github.com/guns/xterm-color-table.vim.git
-[submodule "pack/plugins/start/vim-rails"]
-	path = pack/plugins/start/vim-rails
-	url = https://github.com/tpope/vim-rails.git
-[submodule "pack/plugins/start/open-pdf.vim"]
-	path = pack/plugins/start/open-pdf.vim
-	url = https://github.com/rhysd/open-pdf.vim.git
 [submodule "pack/plugins/start/csv.vim"]
 	path = pack/plugins/start/csv.vim
 	url = https://github.com/chrisbra/csv.vim
+
+[submodule "pack/plugins/start/editorconfig-vim"]
+	path = pack/plugins/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+
+[submodule "pack/plugins/start/gruvbox"]
+	path = pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+
+[submodule "pack/plugins/start/open-pdf.vim"]
+	path = pack/plugins/start/open-pdf.vim
+	url = https://github.com/rhysd/open-pdf.vim.git
+
+[submodule "pack/plugins/start/vim-airline"]
+	path = pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+
+[submodule "pack/plugins/start/vim-fish"]
+	path = pack/plugins/start/vim-fish
+	url = https://github.com/dag/vim-fish.git
+
+[submodule "pack/plugins/start/vim-fugitive"]
+	path = pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+
+[submodule "pack/plugins/start/vim-haml"]
+	path = pack/plugins/start/vim-haml
+	url = https://github.com/tpope/vim-haml.git
+
+[submodule "pack/plugins/start/vim-javascript"]
+	path = pack/plugins/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+
+[submodule "pack/plugins/start/vim-rails"]
+	path = pack/plugins/start/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+
+[submodule "pack/plugins/start/vim-rhubarb"]
+	path = pack/plugins/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
+
+[submodule "pack/plugins/start/vim-ruby"]
+	path = pack/plugins/start/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+
+[submodule "pack/plugins/start/vim-signify"]
+	path = pack/plugins/start/vim-signify
+	url = https://github.com/mhinz/vim-signify.git
+
+[submodule "pack/plugins/start/xterm-color-table"]
+	path = pack/plugins/start/xterm-color-table
+	url = https://github.com/guns/xterm-color-table.vim.git
+
 [submodule "pack/plugins/start/vim-pandoc"]
 	path = pack/plugins/start/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
@@ -31,21 +63,3 @@
 [submodule "pack/plugins/start/vim-obsession"]
 	path = pack/plugins/start/vim-obsession
 	url = git://github.com/tpope/vim-obsession.git
-[submodule "pack/plugins/start/vim-ruby"]
-	path = pack/plugins/start/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "pack/plugins/start/gruvbox"]
-	path = pack/plugins/start/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
-[submodule "pack/plugins/start/vim-signify"]
-	path = pack/plugins/start/vim-signify
-	url = https://github.com/mhinz/vim-signify.git
-[submodule "pack/plugins/start/vim-airline"]
-	path = pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "pack/plugins/start/vim-fish"]
-	path = pack/plugins/start/vim-fish
-	url = https://github.com/dag/vim-fish.git
-[submodule "pack/plugins/start/vim-haml"]
-	path = pack/plugins/start/vim-haml
-	url = https://github.com/tpope/vim-haml.git
