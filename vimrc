@@ -9,6 +9,9 @@
 " General settings
 "------------------------------------------
 
+" This is vim, not vi
+set nocompatible
+
 " Vim needs a more POSIX-compliant shell than fish
 " See <https://github.com/dag/vim-fish>
 if &shell =~# 'fish$'
