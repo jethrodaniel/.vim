@@ -22,14 +22,14 @@
 [submodule "pack/plugins/start/csv.vim"]
 	path = pack/plugins/start/csv.vim
 	url = https://github.com/chrisbra/csv.vim
-[submodule "pack/plugins/start/vim-pandoc.git"]
-	path = pack/plugins/start/vim-pandoc.git
+[submodule "pack/plugins/start/vim-pandoc"]
+	path = pack/plugins/start/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
-[submodule "pack/plugins/start/vim-pandoc-syntax.git"]
-	path = pack/plugins/start/vim-pandoc-syntax.git
+[submodule "pack/plugins/start/vim-pandoc-syntax"]
+	path = pack/plugins/start/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
-[submodule "pack/plugins/start/vim-obsession.git"]
-	path = pack/plugins/start/vim-obsession.git
+[submodule "pack/plugins/start/vim-obsession"]
+	path = pack/plugins/start/vim-obsession
 	url = git://github.com/tpope/vim-obsession.git
 [submodule "pack/plugins/start/vim-ruby"]
 	path = pack/plugins/start/vim-ruby
