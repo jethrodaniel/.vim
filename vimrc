@@ -151,6 +151,10 @@ let mapleader = "\<Space>"
 " An additional, often used, esc
 inoremap jj <Esc>
 
+" Make j and k go up and down on the screen, ignoring how lines wrap
+nnoremap j gj
+nnoremap k gk
+
 " Toggle paste
 nnoremap <Leader>p :set paste!<CR>
 
