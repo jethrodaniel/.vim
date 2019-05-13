@@ -21,6 +21,21 @@ You should also set your system editor to vim like so:
 sudo update-alternatives --config editor
 ```
 
+**Note**
+
+If you're using [brew](https://brew.sh/), you'll need to install the gui in
+order to get vim complied with `+clipboard`. Gotta have `"+`.
+
+```
+brew edit vim
+```
+
+Replace `"--enable-gui=yes"` with `"--enable-gui=yes"`, then
+
+```
+brew reinstall vim
+```
+
 ### Updating
 
 ```
@@ -30,21 +45,6 @@ sudo update-alternatives --config editor
 ### What it do
 
 Plugins are handled by vim's native package manager, introduced in vim8. Be sure your vim is up-to-date!
-
-```
-vim --version | grep VIM
-```
-
-should output something similar to
-
-```
-VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Apr 10 2018 21:31:58)
-   system vimrc file: "$VIM/vimrc"
-  system gvimrc file: "$VIM/gvimrc"
-       defaults file: "$VIMRUNTIME/defaults.vim"
-    system menu file: "$VIMRUNTIME/menu.vim"
-  fall-back for $VIM: "/usr/share/vim"
-```
 
 See vim's `:help packages` for more information.
 
