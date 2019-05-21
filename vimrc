@@ -138,6 +138,11 @@ if has('autocmd')
 
     " Always spell-check commits and add rulers for correct length
     autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73 colorcolumn+=51
+
+    " Indent xml files with gg=G
+    " From <https://stackoverflow.com/a/21408619/7132678>
+    " Note: xmllint is needed ,for example with `brew install xmlstarlet`
+    autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
   augroup END
 endif
 
