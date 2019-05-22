@@ -205,6 +205,10 @@ nnoremap <Leader>t :tabnew<CR>
 " Tab for completion
 imap <Tab> <C-P>
 
+" Vimium-style tab movements
+nnoremap >> :tabmove +1<CR>
+nnoremap << :tabmove -1<CR>
+
 set complete=.,b,u,]
 set wildmode=longest,list:longest
 set completeopt=menu,preview
