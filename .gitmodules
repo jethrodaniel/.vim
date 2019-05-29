@@ -36,7 +36,7 @@
 
 [submodule "pack/plugins/start/vim-obsession"]
 	path = pack/plugins/start/vim-obsession
-	url = git://github.com/tpope/vim-obsession.git
+	url = https://github.com/tpope/vim-obsession.git
 
 [submodule "pack/plugins/start/vim-pandoc"]
 	path = pack/plugins/start/vim-pandoc
@@ -65,9 +65,11 @@
 [submodule "pack/plugins/start/xterm-color-table"]
 	path = pack/plugins/start/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim.git
+
 [submodule "pack/plugins/start/vim-jsx"]
 	path = pack/plugins/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+
 [submodule "pack/plugins/start/vim-bundler"]
 	path = pack/plugins/start/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
