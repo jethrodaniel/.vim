@@ -113,6 +113,9 @@ if has('mouse')
   set mouse=a
 endif
 
+" If a `tags` file isn't found, keep searching up the directory tree until ~
+set tags+=tags;$HOME
+
 " If compiled with support for autocommands
 if has('autocmd')
 
@@ -185,6 +188,9 @@ nnoremap W :w<CR>
 
 " Save and exit
 nnoremap Z :wq<CR>
+
+" Zoom, like tmux's prefix z
+nnoremap <C-w>z <C-w>\|<C-w>\_<CR>
 
 " Toggle spell checking, and also show list characters like blanks at line
 " ends or non-unix eols.
