@@ -101,17 +101,16 @@ set wrapscan    " Enable searching around the end of a file
 " For example, ruby's do..end pairs
 runtime! macros/matchit.vim
 
-" Enable the mouse, if available.
+" Disable the mouse.
 "
-" If you *wanted* to diable mouse support, use this >
-"   set mouse=
+" This is useful for laptops, where the trackpad gets brushed occasionally.
+"
+" If you *wanted* mouse support, use this >
+"   if has('mouse')
+"     set mouse=a
+"   endif
 " <
-"
-" The above is useful for laptops, where the trackpad gets brushed occasionally.
-"
-if has('mouse')
-  set mouse=a
-endif
+set mouse=
 
 " If a `tags` file isn't found, keep searching up the directory tree until ~
 set tags+=tags;$HOME
