@@ -144,6 +144,10 @@ if has('autocmd')
     " From <https://stackoverflow.com/a/21408619/7132678>
     " Note: xmllint is needed ,for example with `brew install xmlstarlet`
     autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
+    " Open all folds in markdown files, as vim-pandoc-syntax closes them all
+    " by default
+    autocmd Syntax markdown normal zR
   augroup END
 endif
 
