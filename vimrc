@@ -285,3 +285,15 @@ endfun
 
 " Easily add a ruby debugger
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
+
+"------------------------------------------
+" Must be at the end
+"------------------------------------------
+
+" Load all plugins - plugins need to be added to runtimepath before helptags
+" can be generated.
+packloadall
+
+" Load `:help` for all plugins, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
