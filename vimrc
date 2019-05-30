@@ -173,6 +173,9 @@ nnoremap <Leader>p :set paste!<CR>
 " Toggle wrap
 nnoremap <Leader>w :set wrap!<CR>
 
+" Generate ruby tags file, requires <https://github.com/tmm1/ripper-tags>
+nnoremap <Leader>] :! ripper-tags -R <CR>
+
 " Move between panes without the ^W prefix
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
