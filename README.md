@@ -5,14 +5,7 @@ Vim settings and plugins
 ### Installation
 
 ```
-rm -rf ~/.vim ~/.vim{rc,info} # Or back yours up, if you'd like
 git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
-```
-
-Then (inside vim), generate help for the plugins
-
-```
-:helptags ALL
 ```
 
 You should also set your system editor to vim like so:
@@ -39,7 +32,7 @@ brew reinstall vim
 ### Updating
 
 ```
-( cd ~/.vim && git submodule foreach git checkout master && git pull )
+( cd ~/.vim && git checkout master && git pull && git submodule init && git submodule update)
 ```
 
 ### What it do
