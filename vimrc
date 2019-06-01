@@ -163,6 +163,12 @@ let mapleader = "\<Space>"
 " An additional, often used, esc
 inoremap jj <Esc>
 
+" Tab for completion
+inoremap <Tab> <C-x><C-o>
+set complete=.,b,u,]
+set wildmode=longest,list:longest
+set completeopt=menu,menuone,preview,noselect,noinsert
+
 " Make j and k go up and down on the screen, ignoring how lines wrap
 nnoremap j gj
 nnoremap k gk
@@ -215,25 +221,13 @@ nnoremap <Leader>h <C-w>t<C-w>K
 " Open a new tab page
 nnoremap <Leader>t :tabnew<CR>
 
-" Tab for completion
-imap <Tab> <C-P>
-
 " Vimium-style tab movements
 nnoremap >> :tabmove +1<CR>
 nnoremap << :tabmove -1<CR>
 
-set complete=.,b,u,]
-set wildmode=longest,list:longest
-set completeopt=menu,preview
-
 " Format instead of `ex-mode`. Even Bram Moolenaar recommends this.
 " See `help usr_05`
 map Q gq
-
-" vim-fugitive extensions
-" command Tseeds Tmigration 0
-" command Vseeds Vmigration 0
-" command Eseeds Emigration 0
 
 "------------------------------------------
 " Theme
@@ -285,6 +279,38 @@ endfun
 
 " Easily add a ruby debugger
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
+
+"------------------------------------------
+" ALE settings
+"------------------------------------------
+
+let g:ale_fixers = {
+\   '*': [
+\     'remove_trailing_lines',
+\     'trim_whitespace'
+\   ],
+\
+\   'ruby': [
+\     'rubocop',
+\     'remove_trailing_lines',
+\     'trim_whitespace'
+\   ]
+\ }
+
+" Set this variable to 1 to fix files when you save them.
+" let g:ale_fix_on_save = 1
+
+" Use ALE's function for omnicompletion, see `:help ale-completion`
+set omnifunc=ale#completion#OmniFunc
+
+let g:ale_completion_excluded_words = ['']
+
+" Always keep gutter open
+let g:ale_sign_column_always = 1
+
+" Customize signs
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
 
 "------------------------------------------
 " Must be at the end
