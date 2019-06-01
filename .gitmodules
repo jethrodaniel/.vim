@@ -77,3 +77,7 @@
 [submodule "pack/plugins/start/ale"]
 	path = pack/plugins/start/ale
 	url = https://github.com/w0rp/ale.git
+
+[submodule "pack/plugins/start/vim-plugin-AnsiEsc"]
+	path = pack/plugins/start/vim-plugin-AnsiEsc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
