@@ -1,5 +1,7 @@
 # .vim
 
+[![Build Status](https://travis-ci.com/jethrodaniel/.vim.svg?branch=master)](https://travis-ci.com/jethrodaniel/.vim)
+
 Vim settings and plugins
 
 ### Installation
