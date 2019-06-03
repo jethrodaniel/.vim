@@ -151,6 +151,9 @@ if has('autocmd')
     " by default
     autocmd Syntax markdown normal zR
   augroup END
+
+  " Remember folds
+  " autocmd BufWinLeave *.* mkviewautocmd BufWinEnter *.* silent loadview
 endif
 
 "------------------------------------------
