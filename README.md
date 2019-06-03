@@ -68,3 +68,10 @@ See vim's `:help packages` for more information.
 - [vim-plugin-AnsiEsc](https://github.com/powerman/vim-plugin-AnsiEsc.git)
 - [vim-toml](https://github.com/cespare/vim-toml.git)
 
+### Tests
+
+- TODO
+
+```
+./test.sh
+```
