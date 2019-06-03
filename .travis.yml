@@ -4,6 +4,8 @@ language: bash
 
 dist: xenial # Ubuntu 16.04
 
+services: xvfb
+
 script: |
   # ------------------------------------------------------------
   # Brew
@@ -19,8 +21,10 @@ script: |
 
   brew install vim
 
+  # Set x11 display
+  export DISPLAY=:99
+
   # ------------------------------------------------------------
   # Basic test
   # ------------------------------------------------------------
-
-  yes | ./test.sh
+  ./test.sh

@@ -44,7 +44,7 @@ main() {
   echo
   echo '------------------------------------------------------------'
 
-  run_basic_setup && run_vader_tests
+  run_basic_setup && (yes | run_vader_tests)
 
   echo '------------------------------------------------------------'
 }
