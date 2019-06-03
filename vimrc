@@ -294,7 +294,12 @@ let g:ale_fixers = {
 \     'rubocop',
 \     'remove_trailing_lines',
 \     'trim_whitespace'
-\   ]
+\   ],
+\   'rust': [
+\     'rustfmt',
+\     'remove_trailing_lines',
+\     'trim_whitespace'
+\   ],
 \ }
 
 " Set this variable to 1 to fix files when you save them.
