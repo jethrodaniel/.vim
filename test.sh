@@ -13,7 +13,8 @@
 # TODO: test all the things
 
 run_vader_tests() {
-  vim -Nu test/temp_vimrc -c 'Vader! test/*' > /dev/null
+  ENV=vim TESTVIM_OPTS=--headless
+  vim -Nu test/temp_vimrc -c 'Vade! test/*'
 }
 
 run_basic_setup() {
@@ -44,7 +45,8 @@ main() {
   echo
   echo '------------------------------------------------------------'
 
-  run_basic_setup && (yes | run_vader_tests)
+  run_basic_setup && \
+  run_vader_tests
 
   echo '------------------------------------------------------------'
 }
