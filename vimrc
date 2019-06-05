@@ -154,6 +154,9 @@ if has('autocmd')
 
   " Remember folds
   " autocmd BufWinLeave *.* mkviewautocmd BufWinEnter *.* silent loadview
+
+  " https://github.com/dan-t/rusty-tags
+  autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 endif
 
 "------------------------------------------
@@ -286,6 +289,7 @@ iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
 "------------------------------------------
 " ALE settings
 "------------------------------------------
+" let g:ale_completion_enabled = 1
 
 let g:ale_fixers = {
 \   '*': [
@@ -304,6 +308,12 @@ let g:ale_fixers = {
 \     'trim_whitespace'
 \   ],
 \ }
+
+let g:ale_linters = {
+\  'ruby': [ 'rubocop' ],
+\  'rust': [ 'rls' ]
+\ }
+let g:ale_rust_rls_toolchain = 'stable'
 
 " Set this variable to 1 to fix files when you save them.
 " let g:ale_fix_on_save = 1

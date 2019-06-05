@@ -68,6 +68,27 @@ See vim's `:help packages` for more information.
 - [vim-plugin-AnsiEsc](https://github.com/powerman/vim-plugin-AnsiEsc.git)
 - [vim-toml](https://github.com/cespare/vim-toml.git)
 
+### What you need to do
+
+Make sure you have the lsps and linters ALE needs available
+
+```
+# Ruby
+gem install rubocop
+
+# Rust
+rustup update
+rustup component add rls rust-analysis rust-src
+```
+
+Additionally, to get `:tags` working with rust
+
+```
+brew install ctags
+cargo install rusty-tags
+rusty-tags vi
+```
+
 ### Tests
 
 - TODO
