@@ -89,3 +89,6 @@
 [submodule "pack/plugins/start/vader.vim"]
 	path = pack/plugins/start/vader.vim
 	url = https://github.com/junegunn/vader.vim
+[submodule "pack/plugins/start/vim-commentary"]
+	path = pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
