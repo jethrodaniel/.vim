@@ -73,6 +73,9 @@ set expandtab     " Use spaces instead of tabs
 
 set nowrap " Do not automatically wrap on load
 
+" When scrolling horizontally, move the screen incrementally
+set sidescroll=1
+
 " Open new horizontal splits at the bottom of the current window
 set splitbelow
 
@@ -235,6 +238,9 @@ nnoremap << :tabmove -1<CR>
 " See `help usr_05`
 map Q gq
 
+" https://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap <expr>y "my\"" . v:register . "y`y"
+
 "------------------------------------------
 " Theme
 "------------------------------------------
@@ -329,6 +335,9 @@ let g:ale_sign_column_always = 1
 " Customize signs
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
+
+" 200 is default
+let g:ale_lint_delay = 200
 
 "------------------------------------------
 " Must be at the end
