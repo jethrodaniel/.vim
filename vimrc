@@ -316,10 +316,12 @@ let g:ale_fixers = {
 \ }
 
 let g:ale_linters = {
-\  'ruby': [ 'rubocop' ],
-\  'rust': [ 'rls' ]
+\  'ruby': ['rubocop'],
+\  'rust': ['rls'],
+\  'haml': ['haml-lint'],
 \ }
 let g:ale_rust_rls_toolchain = 'stable'
+let g:ale_ruby_rubocop_options = '-c ~/.rubocop.yml'
 
 " Set this variable to 1 to fix files when you save them.
 " let g:ale_fix_on_save = 1
