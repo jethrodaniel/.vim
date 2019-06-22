@@ -94,5 +94,5 @@ rusty-tags vi
 - TODO
 
 ```
-./test.sh
+./tests/test.sh
 ```
