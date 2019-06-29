@@ -25,7 +25,7 @@ order to get vim complied with `+clipboard`. Gotta have `"+`.
 brew edit vim
 ```
 
-Replace `"--enable-gui=no"` with `"--enable-gui=yes"`, then
+Replace `"--enable-gui=no"` with `"--enable-gui=yes"`, remove `"--without-x"`, then
 
 ```
 brew reinstall vim

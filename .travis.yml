@@ -2,26 +2,9 @@
 
 language: bash
 
-dist: xenial # Ubuntu 16.04
-
-services: xvfb
+dist: bionic
 
 script: |
-  # ------------------------------------------------------------
-  # Brew
-  # ------------------------------------------------------------
+  sudo apt install -y ruby vim-gnome
 
-  # From <https://docs.brew.sh/Homebrew-on-Linux>
-  sudo apt-get install build-essential curl file git gcc
-
-  git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
-  mkdir -p ~/.linuxbrew/bin
-  ln -sf ../Homebrew/bin/brew ~/.linuxbrew/bin
-  eval "$(~/.linuxbrew/bin/brew shellenv)"
-
-  brew install vim
-
-  # ------------------------------------------------------------
-  # Basic test
-  # ------------------------------------------------------------
-  ./tests/test.sh
+  bundle exec rspec
