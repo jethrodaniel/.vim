@@ -1,14 +1,15 @@
 # Travis CLI settings
 
-language: bash
+language: ruby
 
 dist: xenial
 
 services: xvfb
 
-before_install:
-  - 'sudo apt-get update'
-  - 'sudo apt-get install vim-gnome'
-  - 'vim --version'
+before_install: |
+  sudo apt-get update
+  sudo apt-get install vim-gnome
+  vim --version
+
 
 script: bundle exec rspec
