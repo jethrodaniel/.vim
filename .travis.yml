@@ -4,7 +4,11 @@ language: bash
 
 dist: bionic
 
-script: |
-  sudo apt install -y ruby vim-gnome
+services: xfvb
 
-  bundle exec rspec
+before_install:
+  - 'sudo apt-get update'
+  - 'sudo apt-get install xfvb vim-gnome'
+  - 'vim --version'
+
+script: xvfb-run bundle exec rspec
