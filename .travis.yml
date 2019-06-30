@@ -2,13 +2,13 @@
 
 language: bash
 
-dist: bionic
+dist: xenial
 
-services: xfvb
+services: xvfb
 
 before_install:
   - 'sudo apt-get update'
-  - 'sudo apt-get install xfvb vim-gnome'
+  - 'sudo apt-get install vim-gnome'
   - 'vim --version'
 
-script: xvfb-run bundle exec rspec
+script: bundle exec rspec

@@ -110,3 +110,9 @@ bundle exec rspec
 TODO:
 
 For some reason, running `rspec spec/plugins/ale_spec.rb` fails, but `rspec` works.
+
+### References
+
+Here's a good spec example, all rights reserved to its authors
+
+- https://github.com/gabebw/vim-spec-runner
