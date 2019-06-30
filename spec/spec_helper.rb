@@ -3,9 +3,10 @@
 require 'vimrunner'
 require 'vimrunner/rspec'
 
+# Helpful monkey patches
 module Vimrunner
   class Client
-    def add_plugin! plugin
+    def plugin! plugin
       plugin_path = File.expand_path '..', __dir__
       add_plugin plugin_path, plugin
     end
@@ -17,10 +18,6 @@ module Vimrunner
 end
 
 Vimrunner::RSpec.configure do |c|
-  c.reuse_server = true
-  c.start_vim do
-    Vimrunner.start.tap do |vim|
-      vim.add_plugin! 'vimrc'
-    end
-  end
+  c.reuse_server = false
+  c.start_vim { Vimrunner.start }
 end
