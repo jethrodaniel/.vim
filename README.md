@@ -30,11 +30,15 @@ brew edit vim
 
 Replace:
 
- - `"--enable-gui=no"` with `"--enable-gui=yes"`
+ - `"--enable-gui=no"` with `"--enable-gui=gnome"`
  - `"--without-x"`, with `"--with-x"`
 
+Add:
+
+ - `"--with-features=huge"`
+
 ```
-brew reinstall vim
+brew reinstall vim --build-from-source
 ```
 
 </details>
