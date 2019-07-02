@@ -95,3 +95,6 @@
 [submodule "pack/plugins/start/vim-abolish"]
 	path = pack/plugins/start/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "pack/plugins/start/derp"]
+	path = pack/plugins/start/derp
+	url = https://github.com/jethrodaniel/derp.git
