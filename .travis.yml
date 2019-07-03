@@ -1,15 +1,15 @@
-# Travis CLI settings
-
 language: ruby
+rvm:
+  - 2.6.1
 
 dist: xenial
 
-services: xvfb
+before_install:
+  - 'sudo apt-get update'
+  - 'sudo apt-get install vim-gnome'
+  - 'vim --version'
 
-before_install: |
-  sudo apt-get update
-  sudo apt-get install vim-gnome
-  vim --version
+script: xvfb-run bundle exec rake
 
-
-script: bundle exec rspec
+notifications:
+  email: false

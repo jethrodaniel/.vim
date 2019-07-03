@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
-require 'vimrunner'
-require 'vimrunner/rspec'
+require 'minitest/spec'
+require 'minitest/autorun'
 
-# Helpful monkey patches
+require 'minitest/reporters'
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
+require 'vimrunner'
+
 module Vimrunner
   class Client
     def plugin! plugin
@@ -17,7 +21,4 @@ module Vimrunner
   end
 end
 
-Vimrunner::RSpec.configure do |c|
-  c.reuse_server = false
-  c.start_vim { Vimrunner.start }
-end
+

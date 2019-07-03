@@ -42,15 +42,16 @@ end
 
 describe 'ALE' do
   before do
-    vim.source "#{Dir.home}/.vim/vimrc"
-    vim.plugin! 'pack/plugins/start/ale/plugin/ale.vim'
+    @vim = Vimrunner.start
+    @vim.source "#{Dir.home}/.vim/vimrc"
+    @vim.plugin! 'pack/plugins/start/ale'
+    @ale = AleHelper.new @vim.command ':ALEInfo'
   end
-
-  let(:ale) { AleHelper.new vim.command ':ALEInfo' }
+  after { @vim.kill }
 
   describe 'ruby' do
     it 'has access to ruby linter rubocop' do
-      expect(ale.has_linter? :ruby, 'rubocop').to be true
+      @ale.has_linter?(:ruby, 'rubocop').must_equal true
     end
 
     # TODO: make this work. Currently, no linters are available

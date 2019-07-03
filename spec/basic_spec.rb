@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 # TODO: test the rest of the vimrc
 #
 # vim.echo "has('autocmd')" => 1
@@ -12,7 +14,7 @@ SETTINGS = {
   'showcmd'      => 'showcmd',
   'number'       => 'number',
   'autoindent'   => 'autoindent',
-  'shortmess'    => 'shortmess=filnxtToOI',
+  'shortmess'    => 'shortmess=filnxtToOSI',
   'spelllang'    => 'spelllang=en_us',
   'backup'       => 'backup',
   'undofile'     => 'undofile',
@@ -35,17 +37,19 @@ SETTINGS = {
   'tags'         => "tags=./tags,./TAGS,tags,TAGS,tags;/home/#{ENV['USER']}"
 }.freeze
 
-describe 'Settings' do
+describe 'Basic settings (no plugins)' do
   before do
-    vim.source "#{Dir.home}/.vim/vimrc"
+    @vim = Vimrunner.start
+    @vim.source "#{Dir.home}/.vim/vimrc"
   end
+  after { @vim.kill }
 
   SETTINGS.each do |setting, value|
     quoted = "'#{setting}'"
     setting_padded = quoted.ljust(15).to_s
 
-    it "has setting #{setting_padded} => '#{value}'" do
-      expect(vim.setting setting).to eq value
+    it "#{setting_padded} => '#{value}'" do
+      @vim.setting(setting).must_equal value
     end
   end
 end
