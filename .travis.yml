@@ -10,6 +10,7 @@ before_install: |
   vim --version
 
   cp vimrc ~/.vimrc
+  mkdir -p ~/.vim/{pack,swp,spell,undo}
   cp -ar pack ~/.vim/pack
   cp -ra swp ~/.vim/swp
   cp -ra spell ~/.vim/spell
