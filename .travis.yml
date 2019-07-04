@@ -4,12 +4,19 @@ rvm:
 
 dist: xenial
 
-before_install:
-  - 'sudo apt-get update'
-  - 'sudo apt-get install vim-gnome'
-  - 'vim --version'
+before_install: |
+  sudo apt-get update
+  sudo apt-get install vim-gnome
+  vim --version
 
-script: xvfb-run bundle exec rake
+  cp vimrc ~/.vimrc
+  cp -ar pack ~/.vim/pack
+  cp -ra swp ~/.vim/swp
+  cp -ra spell ~/.vim/spell
+  cp -ra undo ~/.vim/undo
+
+script: |
+  xvfb-run bundle exec rake
 
 notifications:
   email: false
