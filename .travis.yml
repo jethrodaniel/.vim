@@ -6,15 +6,11 @@ dist: xenial
 
 before_install: |
   sudo apt-get update
-  sudo apt-get install vim-gnome
+  sudo apt-get install vim-gnome xvfb
   vim --version
 
-  cp vimrc ~/.vimrc
-  mkdir -p ~/.vim/{pack,swp,spell,undo}
-  cp -ar pack ~/.vim/pack
-  cp -ra swp ~/.vim/swp
-  cp -ra spell ~/.vim/spell
-  cp -ra undo ~/.vim/undo
+  rm -rf ~/.vim*
+  git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
 
 script: |
   xvfb-run bundle exec rake
