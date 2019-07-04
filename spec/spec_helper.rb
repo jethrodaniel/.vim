@@ -6,19 +6,19 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
+require 'pathname'
 require 'vimrunner'
 
 module Vimrunner
   class Client
-    def plugin! plugin
-      plugin_path = File.expand_path '..', __dir__
+    def plugin!(plugin)
+      plugin_path = Pathname.new(File.expand_path '..', __dir__) \
+                      + 'pack/plugins/start'
       add_plugin plugin_path, plugin
     end
 
-    def setting setting
+    def setting(setting)
       command("set #{setting}?").strip
     end
   end
 end
-
-

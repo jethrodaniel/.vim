@@ -44,7 +44,7 @@ describe 'ALE' do
   before do
     @vim = Vimrunner.start
     @vim.source "#{Dir.home}/.vim/vimrc"
-    @vim.plugin! 'pack/plugins/start/ale'
+    @vim.plugin! 'ale'
     @ale = AleHelper.new @vim.command ':ALEInfo'
   end
   after { @vim.kill }
