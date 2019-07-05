@@ -56,7 +56,7 @@ describe 'Basic settings (no plugins)' do
                   .captures
                   .first
 
-    (version.to_f > 8.0).must_equal true, <<~MSG
+    (version.to_f >= 8.0).must_equal true, <<~MSG
       Current vim version: #{version}
       Must have vim 8 or greater in order to use native plugin management.
     MSG
