@@ -50,6 +50,9 @@ set autoindent
 " Don't show vim intro screen
 set shortmess+=I
 
+" Show count while searching
+set shortmess-=S
+
 " Make `diffthis` use vertical windows by default
 set diffopt+=vertical
 

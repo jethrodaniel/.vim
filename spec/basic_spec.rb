@@ -14,7 +14,7 @@ SETTINGS = {
   'showcmd'      => 'showcmd',
   'number'       => 'number',
   'autoindent'   => 'autoindent',
-  'shortmess'    => 'shortmess=filnxtToOSI',
+  'shortmess'    => 'shortmess=filnxtToOI',
   'spelllang'    => 'spelllang=en_us',
   'backup'       => 'backup',
   'undofile'     => 'undofile',
