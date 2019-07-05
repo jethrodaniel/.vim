@@ -33,17 +33,21 @@ class AleHelper
            }
          end
          .reduce Hash.new, :merge
+  rescue NoMethodError
+    {}
   end
 
   def has_linter? lang, linter
     linters[lang].include? linter
+  rescue NoMethodError
+    false
   end
 end
 
 describe 'ALE' do
   before do
     @vim = Vimrunner.start
-    @vim.source "#{Dir.home}/.vim/vimrc"
+    @vim.source "#{Dir.home}/.vim/vimrc.d/plugins/ale.vim"
     @vim.plugin! 'ale'
     @ale = AleHelper.new @vim.command ':ALEInfo'
   end
@@ -54,21 +58,32 @@ describe 'ALE' do
       @ale.has_linter?(:ruby, 'rubocop').must_equal true
     end
 
-    # TODO: make this work. Currently, no linters are available
-    #
-    # it 'fixes files with rubocop' do
-    #   write_file 'test.rb', <<~FILE
-    #     def foo
-    #     end
-    #   FILE
+    it 'fixes files with rubocop' do
+      tmp = Tempfile.new(['test', '.rb']).tap do |t|
+        t << <<~FILE
+          def foo
+          end
+        FILE
+        t.rewind
+      end
 
-    #   vim.edit 'test.rb'
-    #   vim.command ':ALEFix'
-    #   vim.write
+      @vim.edit tmp.path
 
-    #   expect(IO.read 'test.rb').to eq <<~EOF
-    #     def foo; end
-    #   EOF
-    # end
+      skip <<~SKIP
+        TODO: currently this next line fails with
+
+          Vim(redir):E121: Undefined variable: output
+
+        Probably because of vim being run remotely?
+      SKIP
+
+      @vim.command ':ALEFix'
+
+      @vim.write
+
+      IO.read(tmp).must_equal <<~EOF
+        def foo; end
+      EOF
+    end
   end
 end

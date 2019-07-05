@@ -11,13 +11,12 @@ require 'vimrunner'
 
 module Vimrunner
   class Client
-    def plugin!(plugin)
-      plugin_path = Pathname.new(File.expand_path '..', __dir__) \
-                      + 'pack/plugins/start'
-      add_plugin plugin_path, plugin
+    def plugin! plugin
+      plugin_path = Pathname.new(Dir.home) + '.vim/pack/plugins/start'
+      add_plugin (plugin_path + plugin), "plugin/#{plugin}.vim"
     end
 
-    def setting(setting)
+    def setting setting
       command("set #{setting}?").strip
     end
   end
