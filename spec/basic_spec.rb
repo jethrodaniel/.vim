@@ -45,10 +45,7 @@ describe 'Basic settings (no plugins)' do
   after { @vim.kill }
 
   SETTINGS.each do |setting, value|
-    quoted = "'#{setting}'"
-    setting_padded = quoted.ljust(15).to_s
-
-    it "#{setting_padded} => '#{value}'" do
+    it "#{setting} => '#{value}'" do
       @vim.setting(setting).must_equal value
     end
   end

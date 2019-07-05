@@ -10,7 +10,7 @@ before_install: |
   vim --version
 
   rm -rf ~/.vim*
-  git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
+  git clone --verbose --recursive https://github.com/jethrodaniel/.vim ~/.vim
 
 script: |
   xvfb-run bundle exec rake
