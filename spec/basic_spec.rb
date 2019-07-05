@@ -49,4 +49,16 @@ describe 'Basic settings (no plugins)' do
       @vim.setting(setting).must_equal value
     end
   end
+
+  it 'is version 8 or greater' do
+    version = @vim.command(':version')
+                  .match(/VIM - Vi IMproved (\d.\d)/)
+                  .captures
+                  .first
+
+    (version.to_f > 8.0).must_equal true, <<~MSG
+      Current vim version: #{version}
+      Must have vim 8 or greater in order to use native plugin management.
+    MSG
+  end
 end
