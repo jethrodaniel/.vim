@@ -1,7 +1,7 @@
 # .vim
 
 [![Build Status](https://travis-ci.com/jethrodaniel/.vim.svg?branch=master)](https://travis-ci.com/jethrodaniel/.vim)
-
+[![Build Status](https://travis-ci.com/jethrodaniel/.vim.svg?token=ySqdnJm9rLt7T1Fsaj2Q&branch=master)](https://travis-ci.com/jethrodaniel/.vim)
 Vim settings and plugins
 
 ### Installation
@@ -87,10 +87,17 @@ rusty-tags vi
 
 ### Tests
 
-Using [vimrunner](https://github.com/AndrewRadev/vimrunner), which requires [ruby](https://www.ruby-lang.org/en/)
+Using [minitest](https://github.com/seattlerb/minitest) and [vimrunner](https://github.com/AndrewRadev/vimrunner)
 
 ```
 bundle exec rake
+```
+
+To run a partiular spec
+
+```
+ruby -I lib:spec spec/derp_spec.rb
+ruby -I lib:spec spec/derp_spec.rb --name 'test_name_here'
 ```
 
 ### References
