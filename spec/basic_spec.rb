@@ -34,7 +34,7 @@ SETTINGS = {
   'smartcase'    => 'smartcase',
   'wrapscan'     => 'wrapscan',
   'mouse'        => 'mouse=',
-  'tags'         => "tags=./tags,./TAGS,tags,TAGS,tags;/home/#{ENV['USER']}"
+  'tags'         => "tags=tags;/home/#{ENV['USER']}"
 }.freeze
 
 FEATURES = %w(

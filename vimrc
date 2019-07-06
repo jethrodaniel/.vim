@@ -99,7 +99,10 @@ runtime! macros/matchit.vim
 set mouse=
 
 " If a `tags` file isn't found, keep searching up the directory tree until ~
-set tags+=tags;$HOME
+set tags=tags;$HOME
+
+" Only use "+
+set clipboard^=unnamedplus
 
 " If compiled with support for autocommands
 if has('autocmd')
@@ -276,7 +279,10 @@ endfun
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
 
 " Load all other config files
-runtime! vimrc.d/*.vim
+source ~/.vim/vimrc.d/statusline.vim
+source ~/.vim/vimrc.d/plugins/airline.vim
+source ~/.vim/vimrc.d/plugins/ale.vim
+source ~/.vim/vimrc.d/plugins/signify.vim
 
 "------------------------------------------
 " Must be at the end
