@@ -19,5 +19,9 @@ module Vimrunner
     def setting setting
       command("set #{setting}?").strip
     end
+
+    def has? setting
+      command(":echo has('#{setting}')") == '1'
+    end
   end
 end
