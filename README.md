@@ -16,44 +16,26 @@ You should also set your system editor to vim like so:
 sudo update-alternatives --config editor
 ```
 
-You need vim installed with a GUI in order to get vim complied with `+clipboard`. Gotta have `"+`.
+### brew
 
-<details><summary>brew</summary>
-
-TODO: correct this
-
-If you're using [brew](https://brew.sh/), you'll need to install the gui in
+To install with [brew](https://brew.sh/)
 
 ```
-brew edit vim
+brew install --build-from-source ~/.vim/vim.rb
 ```
 
-Replace:
+See the [travis file](.travis.yml) for an example.
 
- - `"--enable-gui=no"` with `"--enable-gui=gnome"`
- - `"--without-x"`, with `"--with-x"`
-
-Add:
-
- - `"--with-features=huge"`
-
-```
-brew reinstall vim --build-from-source
-```
-
-</details>
-
-<details><summary>debian</summary>
+### apt
 
 ```
 sudo apt install vim-gnome
 ```
 
-</details>
-
 ### What it do
 
-Plugins are handled by vim's native package manager, introduced in vim8. Be sure your vim is up-to-date!
+Plugins are handled by vim's native package manager, introduced in vim8.
+Be sure your vim is up-to-date!
 
 See vim's `:help packages` for more information.
 
@@ -108,12 +90,8 @@ rusty-tags vi
 Using [vimrunner](https://github.com/AndrewRadev/vimrunner), which requires [ruby](https://www.ruby-lang.org/en/)
 
 ```
-bundle exec rspec
+bundle exec rake
 ```
-
-TODO:
-
-For some reason, running `rspec spec/plugins/ale_spec.rb` fails, but `rspec` works.
 
 ### References
 
