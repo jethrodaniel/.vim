@@ -32,18 +32,6 @@ set showcmd
 " Show line numbers, relative to the source file
 set number
 
-" Show sign column all the time, even if there aren't any diffs.
-"
-" This is being used to display git status in the 'gutter` using
-" https://github.com/mhinz/vim-signify
-set signcolumn=yes
-
-" Limit number of diffs to search for when displaying the gutter
-let g:signify_vcs_list=['git']
-
-" Show more of the file path in the status line
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
 " Add spaces when indenting
 set autoindent
 
@@ -87,14 +75,6 @@ set splitright
 
 " Show a minimum number of lines below and above the current line
 set scrolloff=3
-
-" Add vim-fugitive status line:
-"
-" From `:help :Gbrowse`: >
-"   If you don't have a statusline, this one matches the default when 'ruler'
-"   is set:
-" <
-set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Use incremental searching, i.e, highlight searching while typing
 set incsearch
