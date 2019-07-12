@@ -101,9 +101,6 @@ set mouse=
 " If a `tags` file isn't found, keep searching up the directory tree until ~
 set tags=tags;$HOME
 
-" Only use "+
-set clipboard^=unnamedplus
-
 " If compiled with support for autocommands
 if has('autocmd')
 
@@ -159,6 +156,10 @@ let mapleader = "\<Space>"
 inoremap jj <Esc>
 
 " Tab for completion
+" See
+"
+" :help popupmenu-keys
+"
 inoremap <Tab> <C-x><C-o>
 set complete=.,b,u,]
 set wildmode=longest,list:longest
