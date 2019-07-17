@@ -28,6 +28,7 @@ let g:ale_linters = {
 \  'haml': ['haml-lint'],
 \ }
 let g:ale_rust_rls_toolchain = 'stable'
+let g:ale_ruby_rubocop_options = '-c ~/.config/rubocop/config.yml'
 
 " Set this variable to 1 to fix files when you save them.
 " let g:ale_fix_on_save = 1
