@@ -6,5 +6,3 @@ set signcolumn=yes
 
 " Limit number of diffs to search for when displaying the gutter
 let g:signify_vcs_list=['git']
-
-

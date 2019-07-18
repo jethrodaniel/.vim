@@ -281,9 +281,9 @@ iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
 
 " Load all other config files
 source ~/.vim/vimrc.d/statusline.vim
-source ~/.vim/vimrc.d/plugins/airline.vim
 source ~/.vim/vimrc.d/plugins/ale.vim
 source ~/.vim/vimrc.d/plugins/signify.vim
+
 
 "------------------------------------------
 " Must be at the end
