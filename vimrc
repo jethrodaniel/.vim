@@ -277,7 +277,10 @@ endfun
 "------------------------------------------
 
 " Easily add a ruby debugger
-iabbrev dbug require 'pry';require 'pry-byebug';binding.pry
+"
+" The `nil` is because bye-bug won't work if this line is the last line
+" some code
+iabbrev dbug require 'pry';require 'pry-byebug';binding.pry;nil
 
 " Load all other config files
 source ~/.vim/vimrc.d/statusline.vim
