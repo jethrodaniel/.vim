@@ -33,7 +33,7 @@ let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 let g:ale_fixers['ruby'] = ['rubocop']
 let g:ale_linters['ruby'] = ['rubocop']
 " Not sure why this is needed
-let g:ale_ruby_rubocop_options = '-c ~/.config/rubocop/config.yml'
+" let g:ale_ruby_rubocop_options = '-c ~/.config/rubocop/config.yml'
 
 " Rust
 let g:ale_fixers['rust'] = ['rustfmt']
