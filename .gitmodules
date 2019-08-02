@@ -106,3 +106,6 @@
 [submodule "pack/plugins/start/file-line"]
 	path = pack/plugins/start/file-line
 	url = https://github.com/bogado/file-line
+[submodule "pack/plugins/start/vim-surround"]
+	path = pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
