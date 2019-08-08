@@ -112,3 +112,6 @@
 [submodule "pack/plugins/start/indentLine"]
 	path = pack/plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule "pack/plugins/start/ri.vim"]
+	path = pack/plugins/start/ri.vim
+	url = https://github.com/danchoi/ri.vim
