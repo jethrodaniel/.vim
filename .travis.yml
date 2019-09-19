@@ -1,8 +1,14 @@
 language: ruby
 rvm:
-  - 2.6.1
+  - 2.4
+  - 2.5
+  - 2.6
 
 dist: bionic
+
+# https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-xvfb-to-run-tests-that-require-a-gui
+services:
+  - xvfb
 
 before_install: |
   sudo apt-get update
@@ -14,7 +20,7 @@ before_install: |
   # ------------------------------------------------------------
 
   # From <https://docs.brew.sh/Homebrew-on-Linux>
-  sudo apt-get install build-essential curl file git gcc
+  sudo apt-get install -y build-essential curl file git gcc
 
   git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
   mkdir -p ~/.linuxbrew/bin
@@ -27,7 +33,7 @@ before_install: |
   git clone --verbose --recursive https://github.com/jethrodaniel/.vim ~/.vim
 
 script: |
-  xvfb-run bundle exec rake
+  bundle exec rake
 
 notifications:
   email: false

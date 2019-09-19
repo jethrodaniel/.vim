@@ -1,17 +1,18 @@
+#
+#  curl https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/vim.rb > vim.rb
+#
 class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/v8.1.1500.tar.gz"
-  sha256 "4bdadee10b8060f3bfc90af3a97c7b4b5964e60182033f8cf3f51e5b6d635134"
-  revision 1
+  url "https://github.com/vim/vim/archive/v8.1.2000.tar.gz"
+  sha256 "11f19bb169391e9eefb775baf9b8db0c8382ecb222c3bd0fa321f6b945fa4a65"
   head "https://github.com/vim/vim.git"
 
   bottle do
-    sha256 "7631104629898ad7ec9dd0c0adc3f8602970cd5ff1e49dba8890cbabfb85bf42" => :mojave
-    sha256 "e4fd97179d2dfbf9d4b7fa575860cb205138241d07bb5aa4fa031ed1a503affe" => :high_sierra
-    sha256 "a833cb295576a6285fd2ae729f3009bfb1fb18af1b157817b04c0b1cdd3b1864" => :sierra
-    sha256 "2f161eb14f1d64de5fc31a6749c491ad2a35aa3417608f167230becc168e65cd" => :x86_64_linux
+    sha256 "1864054669ee13ce21a34fc9306be860b5584c5c77423e0359d7327cf1bbdf77" => :mojave
+    sha256 "cc641ce613cdbee9182ed2fb269f62e7050e6c8965d7e4df7b8bcbb08137ae89" => :high_sierra
+    sha256 "0b44d535bfcf3273bab46ccf183575a018ec15f7b9665f03d1951d82d803c809" => :sierra
   end
 
   depends_on "gettext"
@@ -19,7 +20,6 @@ class Vim < Formula
   depends_on "perl"
   depends_on "python"
   depends_on "ruby"
-  depends_on "ncurses" unless OS.mac?
 
   conflicts_with "ex-vi",
     :because => "vim and ex-vi both install bin/ex and bin/view"
@@ -52,12 +52,11 @@ class Vim < Formula
                           "--enable-perlinterp",
                           "--enable-rubyinterp",
                           "--enable-python3interp",
+                          "--enable-luainterp",
+                          "--with-lua-prefix=#{Formula["lua"].opt_prefix}"
                           "--with-x",
                           "--enable-gnome-check",
                           "--enable-gui=gnome",
-                          "--with-features=huge",
-                          "--enable-luainterp",
-                          "--with-lua-prefix=#{Formula["lua"].opt_prefix}"
     system "make"
     # Parallel install could miss some symlinks
     # https://github.com/vim/vim/issues/1031
