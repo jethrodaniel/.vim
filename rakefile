@@ -9,4 +9,5 @@ Rake::TestTask.new :test do |t|
   t.warning = false
 end
 
+task :spec => :test
 task :default => :test

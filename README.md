@@ -63,14 +63,7 @@ rusty-tags vi
 Using [minitest](https://github.com/seattlerb/minitest) and [vimrunner](https://github.com/AndrewRadev/vimrunner)
 
 ```
-bundle exec rake
-```
-
-To run a partiular spec
-
-```
-ruby -I lib:spec spec/derp_spec.rb
-ruby -I lib:spec spec/derp_spec.rb --name 'test_name_here'
+bundle exec ./bin/test
 ```
 
 ### References

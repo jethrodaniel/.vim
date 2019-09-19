@@ -33,7 +33,7 @@ before_install: |
   git clone --verbose --recursive https://github.com/jethrodaniel/.vim ~/.vim
 
 script: |
-  bundle exec rake
+  bundle exec ./bin/test
 
 notifications:
   email: false
