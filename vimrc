@@ -184,6 +184,8 @@ nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 
+nnoremap - :Explore<CR>
+
 " Save changes
 nnoremap W :w<CR>
 
