@@ -103,6 +103,8 @@ set tags=tags;$HOME
 
 " If compiled with support for autocommands
 if has('autocmd')
+  " https://thoughtbot.com/blog/wrap-existing-text-at-80-characters-in-vim
+  augroup BufRead,BufNewFile *.md setlocal textwidth=80
 
   " Only highlight while searching
   augroup vimrc-incsearch-highlight
