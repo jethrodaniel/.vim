@@ -1,6 +1,8 @@
 # .vim
 
 [![Build Status](https://travis-ci.com/jethrodaniel/.vim.svg?token=ySqdnJm9rLt7T1Fsaj2Q&branch=master)](https://travis-ci.com/jethrodaniel/.vim)
+![](https://img.shields.io/github/license/jethrodaniel/.vim.svg)
+
 
 ### Installation
 
