@@ -115,3 +115,6 @@
 [submodule "pack/plugins/start/ri.vim"]
 	path = pack/plugins/start/ri.vim
 	url = https://github.com/danchoi/ri.vim
+[submodule "pack/plugins/start/vim-crystal"]
+	path = pack/plugins/start/vim-crystal
+	url = https://github.com/rhysd/vim-crystal
