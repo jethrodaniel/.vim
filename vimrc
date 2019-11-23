@@ -44,6 +44,9 @@ set shortmess-=S
 " Make `diffthis` use vertical windows by default
 set diffopt+=vertical
 
+" Use spelling everywhere
+set spell
+
 " American English
 setlocal spelllang=en_us
 
