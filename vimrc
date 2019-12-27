@@ -165,7 +165,7 @@ inoremap jj <Esc>
 "
 " :help popupmenu-keys
 "
-inoremap <Tab> <C-x><C-o>
+inoremap <s-Tab> <C-x><C-o>
 set complete=.,b,u,]
 set wildmode=longest,list:longest
 set completeopt=menu,menuone,preview,noselect,noinsert
