@@ -40,3 +40,7 @@ rusty-tags vi
 ## plugins
 
 all the plugins are added as [git submodules](.gitmodules)
+
+## etc
+
+part of https://github.com/jethrodaniel/dotfiles
