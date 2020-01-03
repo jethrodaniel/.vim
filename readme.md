@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/github/license/jethrodaniel/.vim.svg)
 
-some simple vim settings
+> ed is the standard editor
 
 ### installation
 
@@ -25,6 +25,8 @@ sudo apt install -y vim-gnome
 
 ### what it do
 
+adds a bunch of _essential_ plugins (imo), and something easy on tired eyes.
+
 plugins are handled by vim's native package manager, introduced in vim8.
 be sure your vim is up-to-date!
 
@@ -33,10 +35,8 @@ see vim's `:help packages` for more information.
 make sure you have the lsps and linters ale needs available
 
 ```
-# ruby
 gem install rubocop
 
-# rust
 rustup update
 rustup component add rls rust-analysis rust-src
 ```
@@ -51,10 +51,4 @@ rusty-tags vi
 
 ## plugins
 
-all the plugins are added as git submodules
-
-```
-[submodule "pack/default/start/gruvbox"]
-	path = pack/default/start/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
-```
+all the plugins are added as [git submodules](.gitmodules)
