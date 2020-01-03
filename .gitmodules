@@ -137,3 +137,6 @@
 # [submodule "pack/plugins/start/vim-crystal"]
 # 	path = pack/plugins/start/vim-crystal
 # 	url = https://github.com/rhysd/vim-crystal
+[submodule "pack/default/start/gruvbox"]
+	path = pack/default/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
