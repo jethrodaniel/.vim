@@ -40,3 +40,9 @@
 [submodule "pack/default/start/vim-coffee-script"]
 	path = pack/default/start/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "pack/default/start/vim-dispatch"]
+	path = pack/default/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "pack/default/start/csv.vim"]
+	path = pack/default/start/csv.vim
+	url = https://github.com/chrisbra/csv.vim
