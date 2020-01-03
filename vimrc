@@ -24,7 +24,7 @@ set path=**
 " remember, `:b` lets you autocomplete any open buffer, `:ls` to see these
 "
 set path+=** " search down into subfolders
-set wildmenu " display all matching files when we tab complete 
+set wildmenu " display all matching files when we tab complete
 
 " tag support (may need to install ctags first)
 "
@@ -91,14 +91,14 @@ let g:netrw_list_hide= netrw_gitignore#Hide() " don't show what git ignores
 " spell-checking
 "
 " disabled by default, since it's noisy with code.
-" 
+"
 "   ]s  - next misspelled word
 "   [s  - previous misspelled word
 "   zg  - add a word
 "   1zg - accept first option
 "
 set dictionary=spell        " make `^xk` use the dict when spell is off
-set nospell spelllang=en_us " English, disabled by default
+set spell spelllang=en_us   " English, enabled by default
 command! Spell set spell!   " `:Spell` to toggle.
 set spellfile=~/.vim/spell/en.utf-8.add " set the spell file
 
@@ -110,9 +110,9 @@ if &shell =~# 'fish$'
   set shell=/usr/bin/env bash
 endif
 
-" 
+"
 " splits
-" 
+"
 set splitbelow " open horizontal splits below
 set splitright " open vertical splits to the right
 
@@ -159,7 +159,7 @@ set sidescroll=1      " when scrolling horizontally, move the screen incremental
 " no backup or swp files, that's what version control is for
 set nobackup
 set noundofile
-
+set noswapfile
 
 "
 " keymaps
@@ -244,8 +244,8 @@ inoremap <c-u> <esc>bgUwea
 
 "
 " theme
-" 
- 
+"
+
 set colorcolumn=80 " 80 character ruler
 set background=dark " Use dark themes, if light/dark choice is available
 
@@ -302,6 +302,11 @@ endfun
 "
 " the `\nputs` is because bye-bug won't work if this line is the last line
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry;nil<cr>puts <cr>
+
+" load all other config files
+source ~/.vim/vimrc.d/statusline.vim
+source ~/.vim/vimrc.d/plugins/ale.vim
+source ~/.vim/vimrc.d/plugins/signify.vim
 
 " NOTE: the following must be at the end of this configuration
 
