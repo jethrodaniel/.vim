@@ -44,3 +44,7 @@ all the plugins are added as [git submodules](.gitmodules)
 ## etc
 
 part of https://github.com/jethrodaniel/dotfiles
+
+## license
+
+MIT. Also, most of `thesaurus/` is copy-pasted, so it has its own licenses.
