@@ -75,6 +75,8 @@ let g:netrw_list_hide= netrw_gitignore#Hide() " don't show what git ignores
 
 " autocomplete
 "
+" TODO: use https://github.com/ycm-core/YouCompleteMe ?
+"
 " see |ins-completion| for details
 "
 "   ^n   - select next autocomplete (or scroll forward)
@@ -85,7 +87,7 @@ let g:netrw_list_hide= netrw_gitignore#Hide() " don't show what git ignores
 "   ^xk  - dictionary
 "   ^xt  - thesaurus
 "
-" TODO: add dict to all completions?
+set thesaurus=~/.vim/thesaurus/thesaurus.txt
 
 " spell-checking
 "
