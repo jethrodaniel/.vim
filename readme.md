@@ -11,12 +11,8 @@
 ```
 git clone --recurse-submodules https://github.com/jethrodaniel/.vim ~/.vim
 
-sudo update-alternatives --config editor
-
-# brew install vim
-
-# gotta have "+ support
-sudo apt install -y vim-gnome
+sudo update-alternatives --config editor # or set $EDITOR
+sudo apt install -y vim-gnome            # gotta have "+ support
 ```
 
 ### what it do
@@ -29,10 +25,12 @@ vim's `:help packages` for more information.
 NOTE: make sure you have the lsps and linters ale needs available
 
 ```
+sudo apt install -y ctags
+
 gem install rubocop
+gem install ripper-tags
 
 rustup update && rustup component add rls rust-analysis rust-src
-brew install ctags
 cargo install rusty-tags
 rusty-tags vi
 ```
