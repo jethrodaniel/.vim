@@ -149,7 +149,7 @@ set expandtab    " use spaces instead of tabs
 "
 set shortmess-=S      " show count while searching
 set diffopt+=vertical " make `diffthis` use vertical windows by default
-set scrolloff=3       " show a few lines below and above the current one
+set scrolloff=0       " show no extra lines below and above the current one
 set sidescroll=1      " when scrolling horizontally, move the screen incrementally
 
 "
