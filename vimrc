@@ -318,3 +318,7 @@ packloadall
 " load `:help` for all plugins, after plugins have been loaded.
 " all messages and errors will be ignored.
 silent! helptags ALL
+
+" show the delimiters in CSV files
+" https://github.com/chrisbra/csv.vim
+let g:csv_no_conceal = 1
