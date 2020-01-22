@@ -310,7 +310,7 @@ iabbrev rubo # rubocop:disable
 "
 " load all other config files
 "
-source ~/.vim/vimrc.d/statusline.vim
+source ~/.vim/vimrc.d/plugins/airline.vim
 source ~/.vim/vimrc.d/plugins/ale.vim
 source ~/.vim/vimrc.d/plugins/signify.vim
 source ~/.vim/vimrc.d/plugins/csv.vim
