@@ -304,10 +304,16 @@ endfun
 " the `\nputs` is because bye-bug won't work if this line is the last line
 iabbrev dbug require 'pry';require 'pry-byebug';binding.pry;nil<cr>puts <cr>
 
+" easy rubocop ignore directives
+iabbrev rubo # rubocop:disable
+
+"
 " load all other config files
+"
 source ~/.vim/vimrc.d/statusline.vim
 source ~/.vim/vimrc.d/plugins/ale.vim
 source ~/.vim/vimrc.d/plugins/signify.vim
+source ~/.vim/vimrc.d/plugins/csv.vim
 
 " NOTE: the following must be at the end of this configuration
 
@@ -318,7 +324,3 @@ packloadall
 " load `:help` for all plugins, after plugins have been loaded.
 " all messages and errors will be ignored.
 silent! helptags ALL
-
-" show the delimiters in CSV files
-" https://github.com/chrisbra/csv.vim
-let g:csv_no_conceal = 1
