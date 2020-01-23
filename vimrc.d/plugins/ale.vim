@@ -43,3 +43,11 @@ let g:ale_rust_rls_toolchain = 'stable'
 
 " Haml
 let g:ale_linters['haml'] = ['haml-lint']
+
+"------------------------------------------
+" Keymaps
+"------------------------------------------
+
+nnoremap <silent> <leader>j :ALENext<cr>
+nnoremap <silent> <leader>k :ALEPrevious<cr>
+nnoremap <silent> <leader>f :ALEFix<cr>
