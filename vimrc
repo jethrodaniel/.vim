@@ -285,6 +285,12 @@ augroup indentation_and_options
   autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73 colorcolumn+=51
 augroup END
 
+" Obsess over every vim instance.
+"
+" This is really just used to make sure that you can get back to your open
+" vim instances after say, a restart.
+autocmd VimEnter * :Obsession
+
 "
 " functions
 "
