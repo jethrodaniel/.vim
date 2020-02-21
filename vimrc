@@ -34,6 +34,8 @@ set wildmenu " display all matching files when we tab complete
 "
 command! Tags !ctags -R . " create the `tags` file
 
+command! Rails :Serv! | Dispatch! ./bin/webpack-dev-server
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
