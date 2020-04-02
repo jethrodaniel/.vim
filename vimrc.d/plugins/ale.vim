@@ -51,3 +51,16 @@ let g:ale_linters['haml'] = ['haml-lint']
 nnoremap <silent> <leader>j :ALENext<cr>
 nnoremap <silent> <leader>k :ALEPrevious<cr>
 nnoremap <silent> <leader>f :ALEFix<cr>
+
+" let g:ale_set_highlights = 0
+" highlight clear ALEErrorSign
+" highlight clear ALEWarningSign
+
+" don't hide the cursor
+" https://github.com/dense-analysis/ale/issues/1334
+let g:ale_echo_cursor = 0
+
+" let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
+
+let g:airline#extensions#ale#enabled = 1
+
