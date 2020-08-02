@@ -36,6 +36,9 @@ command! Tags !ctags -R . " create the `tags` file
 
 command! Rails :Serv! | Dispatch! ./bin/webpack-dev-server
 
+" wrapping is hideous
+set nowrap
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -244,12 +247,43 @@ map Q gq
 
 " while in insert mode, use ^u to uppercase the previous word
 inoremap <c-u> <esc>bgUwea
+"
+" file-type stuff
+"
+
+" https://thoughtbot.com/blog/wrap-existing-text-at-80-characters-in-vim
+augroup BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Set filetype specific options
+augroup indentation_and_options
+  autocmd!
+  " use literal tabs in makefiles
+  autocmd! FileType make setlocal noexpandtab
+
+  " always spell-check commits and add rulers for correct length
+  autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73 colorcolumn+=51
+augroup END
 
 "
-" theme
+" functions
 "
 
-set colorcolumn=80 " 80 character ruler
+" call `:exec SynGroup()` to show the highlight group under the cursor
+function! SynGroup()
+  let l:s = synID(line('.'), col('.'), 1)
+  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+
+"
+" abbreviations
+"
+" see ~/.vim/after/ftplugins/*.vim
+
+"
+" theme / style
+"
+
+set colorcolumn=80  " 80 character ruler
 set background=dark " Use dark themes, if light/dark choice is available
 
 " needed to enable truecolor support
@@ -270,43 +304,13 @@ let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-"
-" file-type stuff
-"
+set nospell
 
-" https://thoughtbot.com/blog/wrap-existing-text-at-80-characters-in-vim
-augroup BufRead,BufNewFile *.md setlocal textwidth=80
-
-" Set filetype specific options
-augroup indentation_and_options
-  autocmd!
-  " use literal tabs in makefiles
-  autocmd! FileType make setlocal noexpandtab
-
-  " always spell-check commits and add rulers for correct length
-  autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73 colorcolumn+=51
-augroup END
-
-" Obsess over every vim instance.
-"
-" This is really just used to make sure that you can get back to your open
-" vim instances after say, a restart.
-autocmd VimEnter * :Obsession
-
-"
-" functions
-"
-
-" call `:exec SynGroup()` to show the highlight group under the cursor
-function! SynGroup()
-  let l:s = synID(line('.'), col('.'), 1)
-  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
-endfun
-
-"
-" abbreviations
-"
-" see ~/.vim/after/ftplugins/*.vim
+" make the bg much darker
+set signcolumn=number
+set background=dark
+highlight Normal     ctermbg=16
+highlight SignColumn ctermbg=16
 
 "
 " load all other config files
