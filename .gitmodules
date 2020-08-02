@@ -52,3 +52,6 @@
 [submodule "pack/default/start/vim-airline"]
 	path = pack/default/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "pack/default/start/vim-rspec"]
+	path = pack/default/start/vim-rspec
+	url = https://github.com/thoughtbot/vim-rspec
