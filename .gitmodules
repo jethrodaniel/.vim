@@ -4,15 +4,9 @@
 [submodule "pack/default/start/vim-fugitive"]
 	path = pack/default/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "pack/default/start/vim-obsession"]
-	path = pack/default/start/vim-obsession
-	url = https://github.com/tpope/vim-obsession.git
 [submodule "pack/default/start/vim-rails"]
 	path = pack/default/start/vim-rails
 	url = https://github.com/tpope/vim-rails.git
-[submodule "pack/default/start/vim-rhubarb"]
-	path = pack/default/start/vim-rhubarb
-	url = https://github.com/tpope/vim-rhubarb.git
 [submodule "pack/default/start/vim-signify"]
 	path = pack/default/start/vim-signify
 	url = https://github.com/mhinz/vim-signify
@@ -37,21 +31,15 @@
 [submodule "pack/default/start/vim-crystal"]
 	path = pack/default/start/vim-crystal
 	url = https://github.com/rhysd/vim-crystal
-[submodule "pack/default/start/vim-coffee-script"]
-	path = pack/default/start/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "pack/default/start/vim-dispatch"]
 	path = pack/default/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
 [submodule "pack/default/start/csv.vim"]
 	path = pack/default/start/csv.vim
 	url = https://github.com/chrisbra/csv.vim
-[submodule "pack/default/start/vim-bundler"]
-	path = pack/default/start/vim-bundler
-	url = git://github.com/tpope/vim-bundler.git
 [submodule "pack/default/start/vim-airline"]
 	path = pack/default/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "pack/default/start/vim-rspec"]
-	path = pack/default/start/vim-rspec
-	url = https://github.com/thoughtbot/vim-rspec
+[submodule "src"]
+	path = src
+	url = https://github.com/vim/vim
