@@ -107,6 +107,7 @@ set dictionary=spell        " make `^xk` use the dict when spell is off
 set spell spelllang=en_us   " English, enabled by default
 command! Spell set spell!   " `:Spell` to toggle.
 set spellfile=~/.vim/spell/en.utf-8.add " set the spell file
+set nospell " disable by default
 
 " if using fish, set a POSIX shell for vim
 "
@@ -247,22 +248,6 @@ map Q gq
 
 " while in insert mode, use ^u to uppercase the previous word
 inoremap <c-u> <esc>bgUwea
-"
-" file-type stuff
-"
-
-" https://thoughtbot.com/blog/wrap-existing-text-at-80-characters-in-vim
-augroup BufRead,BufNewFile *.md setlocal textwidth=80
-
-" Set filetype specific options
-augroup indentation_and_options
-  autocmd!
-  " use literal tabs in makefiles
-  autocmd! FileType make setlocal noexpandtab
-
-  " always spell-check commits and add rulers for correct length
-  autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73 colorcolumn+=51
-augroup END
 
 "
 " functions
@@ -273,11 +258,6 @@ function! SynGroup()
   let l:s = synID(line('.'), col('.'), 1)
   echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
-
-"
-" abbreviations
-"
-" see ~/.vim/after/ftplugins/*.vim
 
 "
 " theme / style
@@ -304,8 +284,6 @@ let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-set nospell
-
 " make the bg much darker
 set signcolumn=number
 set background=dark
@@ -329,3 +307,17 @@ packloadall
 " load `:help` for all plugins, after plugins have been loaded.
 " all messages and errors will be ignored.
 silent! helptags ALL
+
+hi clear Comment
+" https://github.com/tpope/vim-commentary/issues/30
+setlocal commentstring=//\ %s
+
+" HolyC support.
+" TODO: move this into its own filetype
+" https://vi.stackexchange.com/a/9107
+syn keyword cType
+\ u64 U64 i64 I64
+\ u32 U32 i32 I32
+\ u16 U16 i16 I16
+\ u8  U8  i8  I8
+\ u0  U0
